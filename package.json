@@ -1,9 +1,17 @@
 {
-    "name": "basic-socket",
-    "version": "0.0.1",
-    "description": "Communication between Arduino and HTML/JavaScript",
-    "dependencies": {
-        "socket.io": "^2.0.4",
-        "serialport": "^9.0.1"
-    }
+  "name": "blynk-software",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mqtt": "^5.10.3",
+    "ws": "^8.18.0"
+  }
 }
