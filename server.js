@@ -28,7 +28,7 @@ const mqttClient = mqtt.connect(MQTT_BROKER);
 
 mqttClient.on("connect", () => {
     console.log("Connected to MQTT broker");
-    mqttClient.subscribe("sensor/data");
+    mqttClient.subscribe("swarnendu/data");
 });
 
 mqttClient.on("message", (topic, message) => {
