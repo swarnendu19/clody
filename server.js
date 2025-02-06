@@ -5,22 +5,19 @@ import http from "http";
 import cors from "cors";
 import dotenv from "dotenv";
 
-dotenv.config(); // Load environment variables
-
+dotenv.config();  
 const app = express();
 const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: "*",  // Allow all origins (change to frontend URL in production)
+        origin: "*",  
         methods: ["GET", "POST"]
     }
 });
-
-// ✅ Enable CORS for all requests
+ 
 app.use(cors());
-
-// ✅ Middleware to parse JSON
+ 
 app.use(express.json());
 
 const MQTT_BROKER = process.env.MQTT_BROKER || "mqtt://broker.hivemq.com";

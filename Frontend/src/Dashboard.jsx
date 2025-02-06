@@ -14,10 +14,11 @@ const Dashboard = () => {
     return () => socket.disconnect();
   }, []);
 
+  console.log("Sensor Data ", sensorData);
   return (
     <div>
       <h1>Sensor Data</h1>
-      {sensorData.map((temp, i) => (
+      {sensorData?.map((temp, i) => (
         <p key={i}>Temperature: {temp}°C</p>
       ))}
     </div>
