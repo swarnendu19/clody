@@ -24,9 +24,16 @@ const MQTT_BROKER = process.env.MQTT_BROKER || "mqtt://broker.hivemq.com";
 const mqttClient = mqtt.connect(MQTT_BROKER);
 
 mqttClient.on("connect", () => {
-    console.log("Connected to MQTT broker");
-    mqttClient.subscribe("swarnendu/data");
+    console.log("Connected to MQTT broker, subscribing to topic...");
+    mqttClient.subscribe("swarnendu/data", (err) => {
+        if (err) {
+            console.error("Failed to subscribe:", err);
+        } else {
+            console.log("Successfully subscribed to swarnendu/data");
+        }
+    });
 });
+
 
 mqttClient.on("message", (topic, message) => {
     try {
